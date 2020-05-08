@@ -8,11 +8,16 @@ public class HMediaRecorderParams {
     private int audioSource;
     private int outputFormat;
     private int audioEncoder;
+    private int audioChanel;
+    private int mAudioChannels = 1;
+    private int mAudioEncodingBitRate = 8000;
+    private int mAudioSamplingRate = 8000;
 
     public HMediaRecorderParams() {
         setAudioSource(MediaRecorder.AudioSource.MIC);
         setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
         setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+
     }
 
     public int getAudioSource() {
@@ -57,6 +62,33 @@ public class HMediaRecorderParams {
      */
     public HMediaRecorderParams setAudioEncoder(int audioEncoder) {
         this.audioEncoder = audioEncoder;
+        return this;
+    }
+
+    public int getAudioChannels() {
+        return mAudioChannels;
+    }
+
+    public HMediaRecorderParams setAudioChannels(int audioChannels) {
+        mAudioChannels = audioChannels;
+        return this;
+    }
+
+    public int getAudioEncodingBitRate() {
+        return mAudioEncodingBitRate;
+    }
+
+    public HMediaRecorderParams setAudioEncodingBitRate(int audioEncodingBitRate) {
+        mAudioEncodingBitRate = audioEncodingBitRate;
+        return this;
+    }
+
+    public int getAudioSamplingRate() {
+        return mAudioSamplingRate;
+    }
+
+    public HMediaRecorderParams setAudioSamplingRate(int audioSamplingRate) {
+        mAudioSamplingRate = audioSamplingRate;
         return this;
     }
 }

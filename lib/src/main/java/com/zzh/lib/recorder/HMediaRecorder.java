@@ -197,11 +197,13 @@ public class HMediaRecorder {
             mRecorder.setAudioSource(params.getAudioSource());
             mRecorder.setOutputFormat(params.getOutputFormat());
             mRecorder.setAudioEncoder(params.getAudioEncoder());
-
+            mRecorder.setAudioChannels(params.getAudioChannels());
+            mRecorder.setAudioEncodingBitRate(params.getAudioEncodingBitRate());
+            mRecorder.setAudioSamplingRate(params.getAudioSamplingRate());
             mRecorder.setOutputFile(mRecordFile.getAbsolutePath());
+
             mRecorder.prepare();
             mRecorder.start();
-
             mStartTime = System.currentTimeMillis();
             setState(State.Recording);
         } catch (Exception e) {
